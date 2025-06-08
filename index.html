@@ -32,21 +32,54 @@
     }
     .countdown-overlay {
       position: absolute;
-      bottom: 5%;
+      bottom: 10%;
       left: 50%;
       transform: translateX(-50%);
       background-color: transparent;
       padding: 8px 12px;
       border-radius: 10px;
-      font-size: 6vw;
+      font-size: 4.5vw;
       white-space: normal;
       word-break: break-word;
       text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
       width: 90%;
     }
+    .share-buttons {
+      position: absolute;
+      bottom: 2%;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 10px;
+    }
+    .share-buttons a {
+      background: #ffffff88;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      color: #000;
+      font-size: 20px;
+    }
+    .share-buttons a.facebook::before {
+      content: "f";
+      font-family: Arial, sans-serif;
+      font-weight: bold;
+    }
+    .share-buttons a.x::before {
+      content: "X";
+      font-family: Arial, sans-serif;
+      font-weight: bold;
+    }
+    .share-buttons a.whatsapp::before {
+      content: "\2709";
+    }
     @media (min-width: 768px) {
       .countdown-overlay {
-        font-size: 3em;
+        font-size: 2.5em;
         width: auto;
         white-space: nowrap;
       }
@@ -57,6 +90,11 @@
   <div class="background-wrapper">
     <img src="Bild.png" alt="PU LALALA 2025" class="background-image">
     <div id="countdown" class="countdown-overlay"></div>
+    <div class="share-buttons">
+      <a class="facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://ballerina-design.github.io/Pulalala/" target="_blank" title="Teilen auf Facebook"></a>
+      <a class="x" href="https://twitter.com/intent/tweet?url=https://ballerina-design.github.io/Pulalala/" target="_blank" title="Teilen auf X"></a>
+      <a class="whatsapp" href="https://wa.me/?text=Schau+dir+unseren+Urlaubs-Countdown+an!+https://ballerina-design.github.io/Pulalala/" target="_blank" title="Teilen auf WhatsApp"></a>
+    </div>
   </div>
 
   <script>
