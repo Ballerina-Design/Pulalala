@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PU LALALA 2025 Countdown</title>
+  <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #000;
+      font-family: 'Permanent Marker', cursive;
+      color: #fff;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      position: relative;
+    }
+    .background-wrapper {
+      position: relative;
+      width: 90vw;
+      max-width: 1920px;
+    }
+    .background-image {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .countdown-overlay {
+      position: absolute;
+      bottom: 40px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: transparent;
+      padding: 8px 16px;
+      border-radius: 10px;
+      font-size: 3em;
+      white-space: nowrap;
+      text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
+    }
+  </style>
+</head>
+<body>
+  <div class="background-wrapper">
+    <img src="Bild.png" alt="PU LALALA 2025" class="background-image">
+    <div id="countdown" class="countdown-overlay"></div>
+  </div>
+
+  <script>
+    const countdown = () => {
+      const targetDate = new Date("2025-08-17T22:00:00").getTime();
+      const now = new Date().getTime();
+      const distance = targetDate - now;
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      document.getElementById("countdown").innerHTML =
+        `${days} Tage • ${hours} Std • ${minutes} Min • ${seconds} Sek`;
+
+      if (distance < 0) {
+        document.getElementById("countdown").innerHTML = "Es geht loooos!";
+      }
+    };
+
+    countdown();
+    setInterval(countdown, 1000);
+  </script>
+</body>
+</html>
